@@ -15,7 +15,6 @@ public class WebConfig extends  AbstractAnnotationConfigDispatcherServletInitial
 		// TODO Auto-generated method stub
 		return new Class[] {SpringConfig.class};
 	}
-
 	@Override
 	protected String[] getServletMappings() {
 		// TODO Auto-generated method stub
