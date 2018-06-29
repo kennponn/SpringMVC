@@ -2,7 +2,7 @@
 
 ![logo](http://bbs.marding.cn/data/attachment/forum/201806/30/032142y422ckr4xfgm6fcf.jpg)
 
-###SQL:
+### SQL:
 create database springsecurity;
 
 use springsecurity
