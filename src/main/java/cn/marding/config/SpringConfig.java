@@ -5,6 +5,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -22,6 +23,14 @@ public class SpringConfig extends WebMvcConfigurerAdapter{
 		resolver.setSuffix(".jsp");
 		resolver.setExposeContextBeansAsAttributes(true);
 		return resolver;
+	}
+	@Bean
+	CharacterEncodingFilter characterEncodingFilter(){
+	    CharacterEncodingFilter filter = new CharacterEncodingFilter();
+	    filter.setEncoding("UTF-8");
+	    //是否强制覆盖当前编码格式
+	    filter.setForceEncoding(true);
+	    return filter;
 	}
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
