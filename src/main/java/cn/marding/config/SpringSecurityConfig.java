@@ -19,23 +19,18 @@ import cn.marding.service.UserService;
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private UserService userService;
-
+	@Autowired
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		// Configure spring security's authenticationManager with custom
 		// user details service
-	    auth.authenticationProvider(authenticationProvider());
+	   auth.authenticationProvider(authenticationProvider());
 	}
 
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
 		DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
 		authProvider.setUserDetailsService(userService);
-		authProvider.setPasswordEncoder(encoder());
 		return authProvider;
 	}
 
-	@Bean
-	public PasswordEncoder encoder() {
-		return new BCryptPasswordEncoder(11);
-	}
 }
