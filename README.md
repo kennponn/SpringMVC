@@ -1,4 +1,4 @@
-# SpringMVC4.x整合Mybatis(纯注解)内含事务管理,权限管理案例
+# SpringMVC4.x整合Mybatis案例(纯注解)
 
 ![logo](http://bbs.marding.cn/data/attachment/forum/201806/30/032142y422ckr4xfgm6fcf.jpg)
  
