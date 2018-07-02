@@ -19,7 +19,6 @@ public class UserService  implements UserDetailsService{
 	    if( user == null ){
             throw new UsernameNotFoundException(String.format("User with username=%s was not found", username));
         }
-
         return user;
 	}
 

@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/user")
 public class UserController {
     @PreAuthorize("hasRole('user')")
-	@RequestMapping("/home")
+	@RequestMapping(value = {"/","/home"})
 	public String home() {
 		
 		return "user/home";
 	}
+
 }

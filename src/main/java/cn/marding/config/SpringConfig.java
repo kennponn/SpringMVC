@@ -14,7 +14,7 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages="cn.marding",excludeFilters=@Filter(type = FilterType.ANNOTATION,value = EnableWebMvc.class))
+@ComponentScan(basePackages="cn.marding",excludeFilters=@Filter(type = FilterType.ANNOTATION,value = Configuration.class))
 public class SpringConfig extends WebMvcConfigurerAdapter{
 	@Bean
 	public ViewResolver viewResolver() {
