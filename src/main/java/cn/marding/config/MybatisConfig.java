@@ -22,26 +22,26 @@ public class MybatisConfig {
 	private String username;
 	@Value("root")
 	private String password;
-	
-	  @Bean
-	    public DataSource dataSource() {
-	        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-	        dataSource.setDriverClassName(driverClass);
-	        dataSource.setUsername(username);
-	        dataSource.setPassword(password);
-	        dataSource.setUrl(url);
-	        return dataSource;
-	    }
-	 
-	    @Bean
-	    public DataSourceTransactionManager transactionManager() {
-	        return new DataSourceTransactionManager(dataSource());
-	    }
-	 
-	    @Bean
-	    public SqlSessionFactory sqlSessionFactory() throws Exception {
-	        SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
-	        sessionFactory.setDataSource(dataSource());
-	        return sessionFactory.getObject();
-	    }
+
+	@Bean
+	public DataSource dataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		dataSource.setDriverClassName(driverClass);
+		dataSource.setUsername(username);
+		dataSource.setPassword(password);
+		dataSource.setUrl(url);
+		return dataSource;
+	}
+
+	@Bean
+	public DataSourceTransactionManager transactionManager() {
+		return new DataSourceTransactionManager(dataSource());
+	}
+
+	@Bean
+	public SqlSessionFactory sqlSessionFactory() throws Exception {
+		SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
+		sessionFactory.setDataSource(dataSource());
+		return sessionFactory.getObject();
+	}
 }

@@ -31,7 +31,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		// TODO Auto-generated method stub
 		http.authorizeRequests().antMatchers("/").permitAll()
 		.and().formLogin().loginPage("/login").
-		usernameParameter("username").passwordParameter("password").and().csrf().disable();
+		usernameParameter("username").passwordParameter("password").and().csrf().disable()
+		.headers().frameOptions().sameOrigin();;
 	}
 	@Bean
 	public DaoAuthenticationProvider authenticationProvider() {
